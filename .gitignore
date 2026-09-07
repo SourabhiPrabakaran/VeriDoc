@@ -1,0 +1,85 @@
+# Node / Frontend
+node_modules
+dist
+dist-ssr
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Python & Virtual Environments
+venv/
+backend/venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Data & Databases
+backend/data/*.db
+backend/data/*.sqlite
+backend/data/*.sqlite3
+*.db
+*.sqlite3
+
+# Dynamic Storage & Evidence Ingests (keep directory structure, ignore uploaded files)
+backend/storage/evidence/*
+!backend/storage/evidence/.gitkeep
+backend/storage/temp/*
+!backend/storage/temp/.gitkeep
+backend/storage/reports/*
+!backend/storage/reports/.gitkeep
+backend/storage/analysis/*/*
+!backend/storage/analysis/*/.gitkeep
+backend/storage/analysis/*
+!backend/storage/analysis/*/.gitkeep
+!backend/storage/analysis/crops
+!backend/storage/analysis/face_crops
+!backend/storage/analysis/ela
+!backend/storage/analysis/fft
+
+
+# Environment and Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+
+# Editor & OS files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

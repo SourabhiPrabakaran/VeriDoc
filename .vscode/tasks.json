@@ -1,0 +1,99 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Backend (FastAPI)",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/venv/Scripts/python.exe",
+      "windows": {
+        "command": "${workspaceFolder}/backend/venv/Scripts/python.exe"
+      },
+      "osx": {
+        "command": "${workspaceFolder}/backend/venv/bin/python"
+      },
+      "linux": {
+        "command": "${workspaceFolder}/backend/venv/bin/python"
+      },
+      "args": [
+        "-m",
+        "uvicorn",
+        "app.main:app",
+        "--reload",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Uvicorn running on.*",
+          "endsPattern": ".*Application startup complete.*"
+        }
+      },
+      "presentation": {
+        "group": "servers",
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Start Frontend (Vite)",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev",
+        "--",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "5173"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*VITE.*ready.*",
+          "endsPattern": ".*Local:.*"
+        }
+      },
+      "presentation": {
+        "group": "servers",
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Start Full-Stack (Backend + Frontend)",
+      "dependsOn": [
+        "Start Backend (FastAPI)",
+        "Start Frontend (Vite)"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

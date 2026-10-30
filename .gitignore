@@ -1,0 +1,126 @@
+# =====================================================================
+# VeriDoc Forensics - Git Ignore Configuration
+# =====================================================================
+
+# --- Dependencies & Virtual Environments ---
+node_modules/
+.pnp
+.pnp.js
+backend/venv/
+backend/venv_old/
+.venv/
+venv/
+env/
+ENV/
+
+# --- Build Outputs & Caches ---
+dist/
+dist-ssr/
+build/
+*.local
+.cache/
+.parcel-cache/
+.oxlint-cache/
+
+# --- Python Compiled Bytecode & Caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.eggs/
+
+# --- Environment Configurations & Secrets ---
+# Keep only .env.example
+.env
+.env.*
+*.env
+backend/.env
+backend/.env.*
+!.env.example
+!backend/.env.example
+
+# --- Local Databases & Storage ---
+backend/data/*.db
+backend/data/*.sqlite
+backend/data/*.sqlite3
+*.db
+*.sqlite
+*.sqlite3
+!backend/data/.gitkeep
+
+# Uploaded Evidence, Analysis Outputs & Forensic Reports
+backend/storage/evidence/*
+!backend/storage/evidence/.gitkeep
+backend/storage/temp/*
+!backend/storage/temp/.gitkeep
+backend/storage/analysis/face_crops/*
+!backend/storage/analysis/face_crops/.gitkeep
+backend/storage/analysis/ela/*
+!backend/storage/analysis/ela/.gitkeep
+backend/storage/analysis/fft/*
+!backend/storage/analysis/fft/.gitkeep
+backend/storage/analysis/gradcam/*
+!backend/storage/analysis/gradcam/.gitkeep
+backend/storage/reports/*
+!backend/storage/reports/.gitkeep
+
+# --- Deep Learning Model Weights & Checkpoints ---
+# Trained model files are preserved locally but excluded from version control
+*.pth
+*.pt
+*.onnx
+*.h5
+*.ckpt
+*.bin
+*.weights
+backend/training/weights/
+backend/training/weights_*/
+
+# --- Datasets & Training Artifacts ---
+# Local datasets, extracted crops, and evaluation logs
+*.zip
+backend/training/data_sdfvd/
+backend/training/data_synthetic/
+backend/training/eval_results/
+backend/training/eval_results_*/
+backend/training/runs/
+backend/training/outputs/
+backend/training/logs/
+
+# --- Logs & Test Artifacts ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+artifacts/
+backend/tests/e2e_results.json
+
+# --- Internal Documentation & Duplicate Notebooks ---
+backend/RELIABILITY_NOTES.md
+backend/training/VeriDoc_Colab_GPU_Training.ipynb
+
+# --- Operating System & Editor Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
